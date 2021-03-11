@@ -1,1 +1,46 @@
-<p>my-image-finder works!</p>
+<div class="container">
+  <mat-form-field class="search-query mat-h1" appearance="fill">
+    <mat-label>Find images</mat-label>
+    <input matInput placeholder="for example: never gonna give you up" (keyup)="onSearchQueryChange($event)" />
+  </mat-form-field>
+  <div class="result empty-result" *ngIf="!images?.length">
+    No images here. Would you try to search for anything else?
+  </div>
+  <div class="result" *ngIf="images?.length">
+    <div class="paginator">
+      <mat-paginator
+        [length]="total"
+        [pageSize]="pageSize"
+        (page)="onPageChange($event)"
+      >
+      </mat-paginator>
+    </div>
+
+    <div fxLayout="row"
+         fxLayoutAlign="center start"
+         fxLayoutGap="20px">
+
+      <div *ngFor="let row of preparedImages"
+           fxFlex="33"
+           fxLayout="column"
+           fxLayoutAlign="center start"
+           fxLayoutGap="20px">
+        <div *ngFor="let image of row" [style.width]="'100%'">
+          <mat-card>
+            <img mat-card-image src="{{image.url}}" alt="{{image.title}}" />
+            <mat-card-title>{{image.title}}</mat-card-title>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="paginator">
+      <mat-paginator
+        [length]="total"
+        [pageSize]="pageSize"
+        (page)="onPageChange($event)"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>
