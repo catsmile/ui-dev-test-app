@@ -1,0 +1,52 @@
+<ng-container>
+  <mat-toolbar class="header" color="primary">
+    <span>Image Finder</span>
+    <span class="spacer"></span>
+    <button mat-mini-fab *ngIf="false">
+      <mat-icon>person</mat-icon>
+    </button>
+    <button mat-mini-fab *ngIf="true">
+      <mat-icon>person_outline</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="container">
+    <mat-sidenav
+      mode="side"
+      opened
+      class="sidenav"
+      [fixedInViewport]="false"
+      [fixedTopGap]="0"
+      [fixedBottomGap]="0"
+    >
+      <mat-action-list>
+        <mat-list-item>
+          <button
+            mat-fab
+            color="primary"
+            [routerLink]="['/images']"
+            routerLinkActive="mat-accent"
+          >
+            <mat-icon>cloud</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button
+            mat-fab
+            color="primary"
+            [routerLink]="['/storage']"
+            routerLinkActive="mat-accent"
+          >
+            <mat-icon>add_to_drive</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-action-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <mat-toolbar class="footer">&copy; 2021</mat-toolbar>
+</ng-container>
