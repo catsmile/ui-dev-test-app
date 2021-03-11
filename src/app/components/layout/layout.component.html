@@ -2,11 +2,11 @@
   <mat-toolbar class="header" color="primary">
     <span>Image Finder</span>
     <span class="spacer"></span>
-    <button mat-mini-fab *ngIf="false">
-      <mat-icon>person</mat-icon>
+    <button mat-mini-fab *ngIf="isAuthorized">
+      <mat-icon (click)="showProfileForm()">person</mat-icon>
     </button>
-    <button mat-mini-fab *ngIf="true">
-      <mat-icon>person_outline</mat-icon>
+    <button mat-mini-fab *ngIf="!isAuthorized">
+      <mat-icon (click)="showAuthForm()">person_outline</mat-icon>
     </button>
   </mat-toolbar>
 
@@ -37,7 +37,7 @@
             [routerLink]="['/storage']"
             routerLinkActive="mat-accent"
           >
-            <mat-icon>add_to_drive</mat-icon>
+            <mat-icon>bookmarks</mat-icon>
           </button>
         </mat-list-item>
       </mat-action-list>

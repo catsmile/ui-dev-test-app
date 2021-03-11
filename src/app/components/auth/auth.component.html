@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Authorization</h1>
+<div mat-dialog-content>
+  <p>Please provide your Nextcloud Bookmarks credentials</p>
+  <mat-form-field>
+    <mat-label>User name</mat-label>
+    <input matInput [(ngModel)]="username" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput type="password" [(ngModel)]="password" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onYesClick()">Authorize</button>
+</div>

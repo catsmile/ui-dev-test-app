@@ -19,13 +19,17 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthComponent } from './components/auth/auth.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     ImageFinderComponent,
-    CloudStorageComponent
+    CloudStorageComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatPaginatorModule,
     MatCardModule,
     MatGridListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

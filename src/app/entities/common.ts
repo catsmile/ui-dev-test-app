@@ -25,3 +25,7 @@ export interface FlickrResponse {
   }
   stat: 'ok' | 'err'
 }
+
+export interface AuthInfo {
+  userId: string;
+}
