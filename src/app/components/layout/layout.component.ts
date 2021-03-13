@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../../services/session.service';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthComponent } from '../auth/auth.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'my-layout',
@@ -9,29 +8,24 @@ import { AuthComponent } from '../auth/auth.component';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  public get isAuthorized() {
-    return !!this.sessionService.getAuthInfo();
-  }
-
   constructor(
-    private readonly sessionService: SessionService,
     private readonly dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
   }
 
-  showAuthForm() {
-    const dialogRef = this.dialog.open(AuthComponent, {
-      width: '400px'
+  showProfileForm() {
+    const dialogRef = this.dialog.open(ProfileComponent, {
+      width: '400px',
+      position: {
+        top: '70px',
+        right: '10px'
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', result);
+      // nothing for now
     });
-  }
-
-  showProfileForm() {
-
   }
 }

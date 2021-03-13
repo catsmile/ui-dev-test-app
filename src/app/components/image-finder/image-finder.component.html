@@ -16,23 +16,10 @@
       </mat-paginator>
     </div>
 
-    <div fxLayout="row"
-         fxLayoutAlign="center start"
-         fxLayoutGap="20px">
-
-      <div *ngFor="let row of preparedImages"
-           fxFlex="33"
-           fxLayout="column"
-           fxLayoutAlign="center start"
-           fxLayoutGap="20px">
-        <div *ngFor="let image of row" [style.width]="'100%'">
-          <mat-card>
-            <img mat-card-image src="{{image.url}}" alt="{{image.title}}" />
-            <mat-card-title>{{image.title}}</mat-card-title>
-          </mat-card>
-        </div>
-      </div>
-    </div>
+    <my-images-list
+      [allowBookmarking]="true"
+      [images]="preparedImages"
+    ></my-images-list>
 
     <div class="paginator">
       <mat-paginator

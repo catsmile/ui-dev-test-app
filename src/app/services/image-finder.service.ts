@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { FlickrResponse, Image } from '../../entities/common';
+import { FlickrResponse, Image } from '../entities/common';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
 
 @Injectable({

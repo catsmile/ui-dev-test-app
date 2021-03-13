@@ -1,6 +1,8 @@
 export interface Image {
   url: string;
   title: string;
+  tags?: string[];
+  id?: string;
 }
 
 export interface FlickrPhoto {
@@ -26,6 +28,9 @@ export interface FlickrResponse {
   stat: 'ok' | 'err'
 }
 
-export interface AuthInfo {
-  userId: string;
+export interface Bookmark {
+  id: string;
+  url: string;
+  title: string;
+  tags?: string[];
 }

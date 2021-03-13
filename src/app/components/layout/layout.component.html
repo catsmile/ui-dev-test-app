@@ -2,11 +2,8 @@
   <mat-toolbar class="header" color="primary">
     <span>Image Finder</span>
     <span class="spacer"></span>
-    <button mat-mini-fab *ngIf="isAuthorized">
+    <button mat-mini-fab>
       <mat-icon (click)="showProfileForm()">person</mat-icon>
-    </button>
-    <button mat-mini-fab *ngIf="!isAuthorized">
-      <mat-icon (click)="showAuthForm()">person_outline</mat-icon>
     </button>
   </mat-toolbar>
 

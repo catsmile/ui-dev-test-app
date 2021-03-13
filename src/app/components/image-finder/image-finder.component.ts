@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import { debounceTime, take } from 'rxjs/operators';
-import { ImageFinderService } from './image-finder.service';
+import { ImageFinderService } from '../../services/image-finder.service';
 import { Image } from '../../entities/common';
 import { PageEvent } from '@angular/material/paginator';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'my-image-finder',
@@ -28,7 +29,8 @@ export class ImageFinderComponent implements OnInit, OnDestroy {
   public preparedImages: Image[][] = [];
 
   constructor(
-    private readonly imageFinderService: ImageFinderService
+    private readonly imageFinderService: ImageFinderService,
+    private readonly utilsService: UtilsService
   ) { }
 
   ngOnInit(): void {
@@ -60,6 +62,8 @@ export class ImageFinderComponent implements OnInit, OnDestroy {
   }
 
   private setPreparedImages() {
+    this.preparedImages = this.utilsService.getObjectsColumns(this.images, this.layoutColumns);
+    /*
     this.preparedImages = [];
 
     const count = this.images.length;
@@ -74,6 +78,8 @@ export class ImageFinderComponent implements OnInit, OnDestroy {
 
       this.preparedImages[colIdx].push(img);
     });
+
+     */
   }
 
   onPageChange($event: PageEvent) {

@@ -1,0 +1,29 @@
+<div fxLayout="row"
+     fxLayoutAlign="center start"
+     fxLayoutGap="20px">
+
+  <div *ngFor="let row of images"
+       fxFlex="33"
+       fxLayout="column"
+       fxLayoutAlign="center start"
+       fxLayoutGap="20px">
+    <div *ngFor="let image of row" [style.width]="'100%'">
+      <mat-card>
+        <img mat-card-image src="{{image.url}}" alt="{{image.title}}" />
+        <mat-card-title>{{image.title}}</mat-card-title>
+
+        <ng-container *ngIf="allowBookmarking">
+          <button mat-raised-button (click)="addBookmark(image)">Bookmark it!</button>
+          <mat-form-field appearance="outline">
+            <mat-label>Tags</mat-label>
+            <input matInput placeholder="some comma-separated tags, maybe?" [(ngModel)]="currentTags" />
+          </mat-form-field>
+        </ng-container>
+
+        <ng-container *ngIf="allowUnbookmarking">
+          <button mat-raised-button (click)="removeBookmark(image)">Remove it!</button>
+        </ng-container>
+      </mat-card>
+    </div>
+  </div>
+</div>

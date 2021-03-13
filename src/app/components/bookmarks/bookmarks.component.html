@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="result empty-result" *ngIf="!preparedImages?.length">
+    No images here. Would you try to bookmark anything from the search results?
+  </div>
+
+  <my-images-list
+    [allowBookmarking]="false"
+    [allowUnbookmarking]="true"
+    [images]="preparedImages"
+    (updateContentRequest)="refresh()"
+  ></my-images-list>
+</div>

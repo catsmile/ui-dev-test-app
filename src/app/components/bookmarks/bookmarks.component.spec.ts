@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CloudStorageComponent } from './cloud-storage.component';
+import { BookmarksComponent } from './bookmarks.component';
 
 describe('CloudStorageComponent', () => {
-  let component: CloudStorageComponent;
-  let fixture: ComponentFixture<CloudStorageComponent>;
+  let component: BookmarksComponent;
+  let fixture: ComponentFixture<BookmarksComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CloudStorageComponent ]
+      declarations: [ BookmarksComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CloudStorageComponent);
+    fixture = TestBed.createComponent(BookmarksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

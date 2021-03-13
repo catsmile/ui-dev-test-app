@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { ImageFinderComponent } from './components/image-finder/image-finder.component';
-import { CloudStorageComponent } from './components/cloud-storage/cloud-storage.component';
+import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,17 +19,21 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AuthComponent } from './components/auth/auth.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { ImagesListComponent } from './components/images-list/images-list.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     ImageFinderComponent,
-    CloudStorageComponent,
-    AuthComponent
+    BookmarksComponent,
+    ProfileComponent,
+    ImagesListComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import { FormsModule } from '@angular/forms';
     MatGridListModule,
     FlexLayoutModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
